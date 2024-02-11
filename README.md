@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SMS Authentication with OTP in TypeScript
+
+This repository is dedicated to demonstrating the implementation of SMS-based authentication using One-Time Passwords (OTP) in a TypeScript project. By leveraging Firebase Authentication services, this example provides a robust starting point for developers looking to integrate secure and efficient user verification mechanisms into their applications.
+
+## About the Project
+
+SMS authentication is a widely used security measure that verifies users by sending a unique code to their mobile device, which they must enter into the application to gain access. This method adds an extra layer of security by ensuring that only the person who has access to the registered phone number can log in.
+
+This project utilizes Firebase's Phone Authentication service to send and verify OTPs, showcasing a practical implementation in a Next.js application styled with Chakra UI for a smooth and responsive user interface.
+
+## Key Features
+
+Firebase Integration: Utilizes Firebase Authentication to manage user verification and authentication securely.
+TypeScript Support: Written in TypeScript to enhance code quality and reliability through static typing.
+Chakra UI: Uses Chakra UI for styling, demonstrating how to build an attractive and responsive UI in a React application.
+reCAPTCHA Verification: Implements Google's reCAPTCHA for additional security during the OTP request process, preventing abuse and ensuring that the request is made by a human.
 
 ## Getting Started
 
-First, run the development server:
+To get this project up and running on your local machine, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Prerequisites
+
+Node.js installed on your system
+A Firebase project for accessing Firebase services
+
+## Installation
+
+Clone the repository:
+```
+git clone https://github.com/your-username/your-repo-name.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd firebase-sms-auth
+Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+npm install
+```
 
-## Learn More
+Set up Firebase configuration:
 
-To learn more about Next.js, take a look at the following resources:
+Create a .env.local file in the root directory and add your Firebase project configuration keys:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+NEXT_PUBLIC_API_KEY=your_api_key
+NEXT_PUBLIC_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_PROJECT_ID=your_project_id
+NEXT_PUBLIC_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_MESSAGING_SENDER_ID=your_messaging_sender_id
+NEXT_PUBLIC_APP_ID=your_app_id
+NEXT_PUBLIC_MEASUREMENT_ID=your_measurement_id
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Run the development server:
 
-## Deploy on Vercel
+```
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Navigate to http://localhost:3000 to see the application in action.
