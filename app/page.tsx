@@ -43,6 +43,27 @@ const Home = () => {
     }
   }, [toast]);
 
+  // // Invisible recaptcha
+  // useEffect(() => {
+  //   if (!window.recaptchaVerifier) {
+  //     window.recaptchaVerifier = new RecaptchaVerifier(auth, 'request-otp', {
+  //       size: 'invisible',
+  //       callback: (response: any) => {
+  //         // Your callback logic here
+  //       },
+  //       'expired-callback': () => {
+  //         console.log('expired');
+  //       },
+  //       'error-callback': (error: any) => {
+  //         console.log(error);
+  //       }
+  //     });
+  //     window.recaptchaVerifier.render().catch((error: any) => {
+  //       console.error("Error rendering reCAPTCHA: ", error);
+  //     });
+  //   }
+  // }, [auth]); 
+
   const requestOTP = () => {
     const phoneNumberWithCode = "+1" + phoneNumber;
     const appVerifier = window.recaptchaVerifier;
